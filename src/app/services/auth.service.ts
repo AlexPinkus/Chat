@@ -5,7 +5,6 @@ import { switchMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Router } from '@angular/router';
 
 import { User } from '../models/user';
 
@@ -17,8 +16,7 @@ export class AuthService {
 
   constructor(
     private afAuth: AngularFireAuth,
-    private afs: AngularFirestore,
-    private router: Router
+    private afs: AngularFirestore
   ) {
     // Get the auth state, then fetch the Firestore user document or return null
     this.user$ = this.afAuth.authState.pipe(
@@ -52,6 +50,5 @@ export class AuthService {
 
   async signOut(): Promise<void> {
     await this.afAuth.auth.signOut();
-    this.router.navigate(['/']);
   }
 }

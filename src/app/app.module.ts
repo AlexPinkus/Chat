@@ -6,8 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import {
-    NbButtonModule, NbChatModule, NbLayoutModule, NbSpinnerModule, NbThemeModule
+  NbButtonModule, NbChatModule, NbLayoutModule, NbSpinnerModule, NbThemeModule
 } from '@nebular/theme';
+import { RouterModule } from '@angular/router';
 
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { ChatComponent } from './components/chat/chat.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot([], { useHash: true }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
