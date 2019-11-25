@@ -11,7 +11,7 @@ import { ChatService } from './services/chat.service';
 export class AppComponent {
   title = 'chat';
 
-  constructor(private auth: AuthService, private chatService: ChatService) { }
+  constructor(public auth: AuthService, private chatService: ChatService) { }
 
   async startChat( ) {
     const id =  await this.auth.anonymousLogin();
