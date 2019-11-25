@@ -5,7 +5,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { NbChatModule, NbLayoutModule, NbSpinnerModule, NbThemeModule } from '@nebular/theme';
+import {
+    NbButtonModule, NbChatModule, NbLayoutModule, NbSpinnerModule, NbThemeModule
+} from '@nebular/theme';
 
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +28,7 @@ import { ChatComponent } from './components/chat/chat.component';
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbEvaIconsModule,
+    NbButtonModule,
     NbChatModule,
     NbSpinnerModule,
     AppRoutingModule
