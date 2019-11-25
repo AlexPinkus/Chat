@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { AuthService } from './services/auth.service';
+import { ChatService } from './services/chat.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chat';
+
+  constructor(private auth: AuthService, private chatService: ChatService) { }
+
+  async startChat( ) {
+    const id =  await this.auth.anonymousLogin();
+    this.chatService.createChat(id);
+  }
+
 }
